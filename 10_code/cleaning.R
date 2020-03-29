@@ -77,4 +77,4 @@ turnout <- turnout[, c(1, 2, 3, 7, 8, 4, 5, 6, 9, 10, 11, 12)]
 
 # need to combine separate elections somehow (if dem and rep for one state in one year are in diff rows)
 
-turnout <- write.csv("turnout.csv")
+write.csv(turnout, "20_intermediate_files/turnout.csv")
