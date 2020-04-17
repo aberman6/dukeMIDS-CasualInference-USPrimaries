@@ -1,10 +1,9 @@
 library(dplyr)
 
 # Load Data
-turnout <- read.csv('20_intermediate_files/turnout_v2.csv', 
-                    row.names = 1, stringsAsFactors = FALSE)
+turnout <- read.csv('20_intermediate_files/turnout_v2.csv', row.names = 1, stringsAsFactors = FALSE)
 
-treatment_group <- c('Colorado','Maine', 'Minnesota', 'Idaho')
+treatment_group <- c('Colorado','Maine', 'Minnesota', 'Idaho', 'Washington')
 
 # States that are excluded from the analysis
 exclude_group <- c('California', 'Hawaii', 'Alaska', 'Ohio', 'Wisconsin', 
@@ -64,6 +63,12 @@ complete_states
 turnout_clean <- turnout_clean %>%
     filter(Year != 2012) %>%
     filter(State %in% complete_states)
+
+# Keep only columns we care about
+turnout_clean <- turnout_clean %>%
+    mutate(Pop = Total) %>%
+    select(State, Year, treatment, VEP_Counted_D, VEP, 
+           Democrat, Type, Pop)
 
 # Export cleaned dataset
 write.csv(turnout_clean, '20_intermediate_files/turnout_v3.csv')
