@@ -4,10 +4,6 @@ library(dplyr)
 turnout <- read.csv('20_intermediate_files/turnout_v2.csv', 
                     row.names = 1, stringsAsFactors = FALSE)
 
-# States that made the switch from caucus to primary in 2020
-# treatment_group <- c('Colorado','Maine', 'Washington', 'Minnesota','Kansas', 
-#                     'Idaho', 'Hawaii', 'Nebraska')
-
 treatment_group <- c('Colorado','Maine', 'Minnesota', 'Idaho')
 
 # States that are excluded from the analysis
@@ -25,8 +21,6 @@ idaho_2008_clean <- turnout %>%
     mutate(Democrat = '64,026') %>%
     slice(-1)
 
-
-# FIRST PASS AT CLEANING
 # Removes states with strange systems and states effected by COVID
 # Cleans Idaho 2008
 # Creates treatment variable
