@@ -54,7 +54,7 @@ turnout_clean <- turnout %>%
     mutate(Type = Format, Pop = Total) %>%
     # Remove extraneous columns
     select(State, Year, treatment, VEP_Counted_D, VEP, 
-           Democrat, Type, Pop, White, Black, Hispanic)
+           Democrat, Republican, Type, Pop, White, Black, Hispanic)
 
 # Now that we have the first pass of cleaning, what states have complete data?
 # States with complete data from 2018, 2016, & 2020
