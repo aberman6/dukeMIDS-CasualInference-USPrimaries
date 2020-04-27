@@ -1,4 +1,4 @@
-# unifying-data-science-final-project-primaries
+# US Presidential Primaries and Voter Turnout
 
 ## Primary Question
 This analysis examines the effect of election format on voter turnout. Specifically, do primaries result in higher voter turnout compared to caucus elections?
